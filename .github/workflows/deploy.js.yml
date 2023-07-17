@@ -1,21 +1,19 @@
-name: First CI
-#coucou
+name: Deploy the Blaireau
+
+
 on:
-    push: 
-        branches: ["main"]
+    workflow_call
 
 jobs: 
-    test: 
-        if: ${{ !contains(github.event.head_commit.message, '#code')}}
-        runs-on: ubuntu-latest
-
-        steps: 
+    deploy: 
+        runs-on: self-hosted
+        steps:
             - name: Checkout
               uses: actions/Checkout@v3
-            - name: Setup node
-              uses: actions/setup-node@v3
-              with: 
-                node-version: 18.X
+            - name: Setup mode
+              uses: actions/setup-node@v3 
+              with:
+                node-version: 18.x
             - name: Install dependencies
               run: npm ci
             - name: Run test
@@ -48,6 +46,3 @@ jobs:
               with: 
                 node-version: 18.X
             - run: echo Hola Mundo 
-    server: 
-      needs: [rotuage]
-      uses: ./github/worflows/deploy.js.yml
