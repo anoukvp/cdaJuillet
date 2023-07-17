@@ -50,4 +50,4 @@ jobs:
             - run: echo Hola Mundo 
     server: 
       needs: [rotuage]
-      uses: ./github/workflows/deploy.js.yml
+      uses: ./.github/workflows/deploy.js.yml
