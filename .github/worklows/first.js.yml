@@ -20,8 +20,24 @@ jobs:
               run: npm ci
             - name: Run test
               run: npm test
-    hello:
+    routage: 
         needs: [test]
+        runs-on: ubuntu-latest
+
+        steps:
+            -name: Checkout
+              uses: actions/Checkout@v3
+            -name: Setup node
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18.X
+            -name: Install dependencies
+                run: npm ci
+            -name: Route test
+                run: npm run route
+
+    hello:
+        needs: [routage]
             runs-on: ubuntu-latest
 
         steps:
