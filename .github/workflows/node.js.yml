@@ -48,6 +48,15 @@ jobs:
               with: 
                 node-version: 18.X
             - run: echo Hola Mundo 
-    server: 
+    server:
+      if: ${{ contains(github.event.head_commit.message, '#pm2')}}
       needs: [routage]
       uses: ./.github/workflows/deploy.js.yml
+
+    docker: 
+      if: ${{!contains(github.event.head_commit.message, '#pm2') }}
+      needs: [routage]
+        uses: ./github/workflows/docker.js.yml
+        secrets: inherit 
+
+      
