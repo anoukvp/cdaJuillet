@@ -22,7 +22,7 @@ jobs:
 
                 username: ${{ secrets.USERNAME }}
                 password: ${{ secrets.PASSWORD }}
-                key: ${{ secrets.key }}
+               # key: ${{ secrets.key }}
                 
                 script: bash update.sh
 
