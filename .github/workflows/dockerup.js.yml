@@ -2,7 +2,7 @@ name: Docker SSH Update
 
 on: 
     workflow_run:
-        workflows: ["First CI"]
+        workflows: ["Update main"]
         types: 
             - completed
 

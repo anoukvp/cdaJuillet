@@ -1,8 +1,8 @@
 name: First CI
-#coucou
+
 on:
     push: 
-        branches: ["main"]
+        branches: ["dev"]
 
 jobs: 
     test: 
