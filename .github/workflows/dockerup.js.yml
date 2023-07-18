@@ -17,11 +17,11 @@ jobs:
             - name: Execute ssh update
               uses: appleboy/ssh-action@master
               with: 
-                host: ${{secrets.host}}
-                port: ${{ secrets.port }}
+                host: ${{secrets.HOST}}
+                port: ${{ secrets.PORT }}
 
-                username: ${{ secrets.username }}
-                password: ${{ secrets.password }}
+                username: ${{ secrets.USERNAME }}
+                password: ${{ secrets.PASSWORD }}
                 key: ${{ secrets.key }}
                 
                 script: bash update.sh
