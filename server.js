@@ -24,9 +24,10 @@ const marcel_router = require('./routers/marcel')
 /****************************/
 /*** Main router parameters */
 
-app.get('/', (req, res) => res.send(`I'm online. All is OK ! Hakuna Matata!`))
+app.get('/', (req, res) => res.send(`I'm online. All is OK ! Yes!`))
 
 app.use('/marcel', marcel_router)
+
 
 app.get('*', (req, res) => res.status(501).send('What the hell are you doing !?!'))
 
