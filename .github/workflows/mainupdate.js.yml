@@ -5,6 +5,7 @@ on:
         workflows: ["First CI"]
         types: 
             - completed
+    branches: ["main"]
 jobs: 
     deploy: 
         runs-on: self-hosted
