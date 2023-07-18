@@ -56,7 +56,7 @@ jobs:
     docker: 
       if: ${{!contains(github.event.head_commit.message, '#pm2') }}
       needs: [routage]
-      uses: ./github/workflows/docker.js.yml
+      uses: ./.github/workflows/docker.js.yml
       secrets: inherit 
 
       
